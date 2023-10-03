@@ -1,0 +1,9 @@
+ <div class="request-item">
+  <h3>{{ item['title'] }}</h3>
+  <p>Location: {{ item['location'] }}</p>
+  {% if 'price' in item %}
+  <p>Price: {{ item['price'] }}</p>
+  {% endif %}
+   <a href="#" class ="btn contact-button">Contact Buyer</a>
+</div>
+       
