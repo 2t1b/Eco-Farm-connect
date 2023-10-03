@@ -1,7 +1,8 @@
-from flask import Flask, render_template , jsonify
+from flask import Flask, render_template , request , send_from_directory
 
 app = Flask(__name__)
-
+app.static_url_path = '/static'
+app.static_folder = 'static'
 List = [
     {
         'id': 1,
@@ -44,5 +45,21 @@ def hello_selam():
 @app.route("/api/list")
 def request_list():
     return jsonify(List)
+
+@app.route('/register')
+def register():
+    return render_template('registration.html')
+
+@app.route('/buyer_requirements', methods=['GET'])
+def buyer_requirements():
+    return render_template('buyer_requirements.html')
+
+@app.route('/submit_requirements', methods=['POST'])
+def submit_requirements():
+    items = request.form.get('items')
+    requirements = request.form.get('requirements')
+    price = request.form.get('price')
+   
+  
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

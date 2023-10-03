@@ -1,4 +1,5 @@
 <style>
+  <style>
   .navbar {
     height: 80px;
   }
@@ -22,21 +23,78 @@
   .navbar-nav .nav-link:hover {
     background-color: #28a745;
   }
+
+  .dropdown-form {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    width: 200px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+  }
+
+  .dropdown-form input[type="text"],
+  .dropdown-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .dropdown-form button {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-toggle {
+    position: relative;
+  }
+
+  .dropdown-toggle .dropdown-form {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+  }
+
+  .dropdown-toggle:hover .dropdown-form {
+    display: block;
+  }
 </style>
+</style>
+
+<script>
+  function toggleDropdown() {
+    var dropdownForm = document.getElementById("dropdown-form");
+    dropdownForm.style.display = dropdownForm.style.display === "none" ? "block" : "none";
+  }
+</script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand ms-2 me-auto" href="#">
-     <img src="/path/to/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Eco farm connect
+     
+    
     </a>
     <div class="ml-auto">
       <ul class="navbar-nav">
         <li class="nav-item">
-         <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="https://eco-farm-connect--sm2t1b.repl.co/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign In</a>
+          <a class="nav-link" href="#" onclick="toggleDropdown()">Sign In</a>
+          <div id="dropdown-form" class="dropdown-form">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Sign In</button>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Logout</a>

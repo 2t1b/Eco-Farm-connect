@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ECO-FARM-CONNECT</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    h1 {
+      color: white;
+      font-size: 36px;
+      letter-spacing: 2px;
+      margin: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://eco-farm-connect--sm2t1b.repl.co/static/hand.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .form-container h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-container form input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 200px;
+    }
+    .form-container form select {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 200px;
+    }
+    .form-container form button {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container form button:hover {
+      background-color: #ccc;
+    }
+    .register-column {
+      flex: 1;
+      padding: 10px;
+    }
+    .back-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .back-button:hover {
+      background-color: #ccc;
+    }
+    @media (max-width: 600px) {
+      .form-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ECO-FARM-CONNECT</h1>
+    <h2 style="margin-top: 20px;">Register Here!</h2>
+    <button class="back-button">Back</button>
+    <div class="form-container">
+      <div class="register-column">
+        <h2>Register as Farmer (Supplier)</h2>
+        <form action="#">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <select>
+            <option value="" disabled selected>Select Country</option>
+            <option value="country1">Country 1</option>
+            <option value="country2">Country 2</option>
+            <!-- Add more country options as needed -->
+          </select>
+          <input type="text" placeholder="Town">
+          <input type="text" placeholder="Phone Number">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="register-column">
+        <h2>Register as Wholesaler (Buyer)</h2>
+        <form action="#">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <select>
+            <option value="" disabled selected>Select Country</option>
+            <option value="country1">Country 1</option>
+            <option value="country2">Country 2</option>
+            <!-- Add more country options as needed -->
+          </select>
+          <input type="text" placeholder="Town">
+          <input type="text" placeholder="Phone Number">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
