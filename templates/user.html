@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <style>
+    /* CSS styles here */
+    body {
+      background-image: url('https://eco-farm-connect--sm2t1b.repl.co/static/truck.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    h1 {
+      color: white;
+      font-size: 36px;
+      letter-spacing: 2px;
+      margin: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align items */
+      margin-top: 50px;
+      padding: 20px;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px; /* Add gap between buttons */
+      margin-bottom: 10px;
+    }
+    .logout-button,
+    .post-button {
+      margin-bottom: 10px;
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .recent-posts {
+      background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color to the recent posts section */
+      padding: 80px;
+      margin-top: 80px;
+      width: 1000px
+    }
+    .post {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>ECO- FARM-CONNECT</h1>
+    <div class="button-container">
+      <a class="nav-link btn logout-button" href="https://eco-farm-connect--sm2t1b.repl.co/">Logout</a>
+      <a class="nav-link btn post-button" href="https://eco-farm-connect--sm2t1b.repl.co/buyer">Create Post</a>
+    </div>
+    
+    <div class="recent-posts">
+      <h2>Request board</h2>
+      <div>
+        {% for item in list %}
+         {%include 'requestlist.html'%}
+        {% endfor %}
+      </div>
+      </div>
+      <!-- Add more posts dynamically here -->
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      // Code to handle logout functionality
+      console.log("Logout clicked");
+    }
+
+    function createPost() {
+      // Code to handle creating a new post
+      console.log("Create post clicked");
+    }
+  </script>
+</body>
+</html>

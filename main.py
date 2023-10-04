@@ -49,6 +49,21 @@ def request_list():
 @app.route('/register')
 def register():
     return render_template('registration.html')
+  
+@app.route('/buyer')
+def post():
+    return render_template('buyer_requirements.html')
+  
+@app.route('/back')
+def exit ():
+    return render_template('home.html')
+@app.route('/user')
+def dash_board ():
+    return render_template('user.html')
+  
+@app.route('/dashuser')
+def dash_board2 ():
+    return render_template('dashuser.html')
 
 @app.route('/buyer_requirements', methods=['GET'])
 def buyer_requirements():

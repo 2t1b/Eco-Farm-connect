@@ -3,16 +3,12 @@
 <head>
   <title>Eco-Farm-Connect</title>
   <style>
-    body
-   
-    {
+    body {
       margin: 0;
       padding: 0;
       background: url('https://eco-farm-connect--sm2t1b.repl.co/static/banner%20pic.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
-      
-        
     }
 
     .container {
@@ -27,7 +23,7 @@
       letter-spacing: 2px;
       margin: 0;
       position: absolute;
-      top: 20px;
+      top: 70px;
       left: 50%;
       transform: translateX(-50%);
       text-transform: uppercase;
@@ -68,7 +64,6 @@
       border-radius: 5px;
       position: relative;
     }
-    }
 
     .request-item h3 {
       margin: 0;
@@ -79,7 +74,8 @@
       margin: 5px 0;
       font-size: 16px;
     }
-     .contact-button {
+
+    .contact-button {
       position: absolute;
       top: 50%;
       right: 10px;
@@ -88,7 +84,7 @@
 
     .about-section {
       text-align: justify;
-      text-justify:inter-word;
+      text-justify: inter-word;
       background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
       margin-top: 40px;
@@ -104,7 +100,7 @@
       margin-bottom: 0;
       text-align: center;
       font-size: 18px;
-      line-height:1.5;
+      line-height: 1.5;
     }
 
     .request-section {
@@ -112,26 +108,65 @@
       padding: 20px;
       margin-bottom: 25px;
     }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: 0; /* Align the navbar to the right */
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end; /* Align the buttons to the right */
+      align-items: center;
+      z-index: 999;
+    }
+
+    .navbar .btn {
+      margin-left: 10px; /* Adjust the spacing between buttons */
+    }
   </style>
+  <script>
+    function toggleLoginForm(){
+      var loginForm= document.getElementById("login-form");
+      loginForm.classList.toggle("hidden");
+    }
+  </script>
 </head>
 <body>
-   {%include 'nav.html'%};
-    
+  <div class="navbar">
+    <a class="nav-link, btn" href="https://eco-farm-connect--sm2t1b.repl.co/register"
+       >Register</a>
+  
+  </div>
+
   <div class="container">
     <h1>ECO-FARM-CONNECT</h1>
+    
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br
+                  ><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br
+                  ><br>
+        <input type="submit" value="Login" class="btn">
+        
+      </form>
+    
     <div class="spacer"></div>
     <div class="about-section">
       <h2>About Us</h2>
       <p>
-        Welcome to Eco Farm Connect, where sustainable farming meets seamless connections. We're dedicated to linking eco-conscious farmers with wholesalers seeking ethically produced, high-quality products. Our platform simplifies the process, allowing wholesalers to easily connect with farmers and source exactly what they need. 
-        Discover a diverse range of fresh, organic produce, dairy, meats, and more, all cultivated with environmentally friendly practices.With Eco Farm Connect, wholesalers gain access to a network of farmers committed to sustainable agriculture, ensuring the highest standards of quality and taste.
+        Welcome to Eco Farm Connect, where sustainable farming meets seamless connections. We're dedicated to linking eco-conscious farmers with wholesalers seeking ethically produced, high-quality products. Our platform simplifies the process, allowing wholesalers to easily connect with farmers and source exactly what they need.
+        Discover a diverse range of fresh, organic produce, dairy, meats, and more, all cultivated with environmentally friendly practices. With Eco Farm Connect, wholesalers gain access to anetwork of farmers committed to sustainable agriculture, ensuring the highest standards of quality and taste.
 
 By joining our platform, wholesalers unlock a world of attractive opportunities to meet their specific needs. Browse through our extensive selection, connect directly with farmers, and establish long-lasting relationships built on trust and shared values.
 
 Join us today and experience a seamless wholesale experience that supports sustainable farming practices while delivering the finest products straight from the farm to your business.
       </p>
     </div>
-    
+
     <div class="request-section">
       <h2>Request board</h2>
       <div>
@@ -140,9 +175,10 @@ Join us today and experience a seamless wholesale experience that supports susta
         {% endfor %}
       </div>
     </div>
-    
+
     <a href="#" class="btn">Contact Us</a>
   </div>
-   {%include 'footer.html'%};
+
+  {% include 'footer.html' %};
 </body>
 </html>
