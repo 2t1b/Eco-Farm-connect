@@ -3,7 +3,7 @@
 <head>
   <title>User Dashboard</title>
   <style>
-   
+    
     body {
       background-image: url('https://eco-farm-connect--sm2t1b.repl.co/static/truck.jpg');
       background-size: cover;
@@ -21,7 +21,7 @@
     .dashboard {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; 
       margin-top: 50px;
       padding: 20px;
     }
@@ -74,7 +74,7 @@
         </thead>
         <tbody>
           <?php
-            $file = fopen("templates/buyer_requests.csv", "r");
+            $file = fopen("data/buyer_requests.csv", "r");
             while (($data = fgetcsv($file)) !== FALSE) {
               $product = $data[0];
               $requirement = $data[1];
@@ -98,7 +98,7 @@
 
   <script>
     function logout() {
-      
+    
       console.log("Logout clicked");
     }
 

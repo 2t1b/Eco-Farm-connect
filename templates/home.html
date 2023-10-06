@@ -14,7 +14,7 @@
     .container {
       padding: 20px;
       text-align: center;
-      margin-top: 100px; /* Adjust the margin-top value as needed */
+      margin-top: 100px; 
     }
 
     h1 {
@@ -49,7 +49,7 @@
     }
 
     .spacer {
-      height: 300px; /* Adjust the height as needed */
+      height: 300px; 
     }
 
     h2 {
@@ -88,7 +88,7 @@
       background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
       margin-top: 40px;
-      margin-bottom: 40px; /* Added margin-bottom to separate the sections */
+      margin-bottom: 40px; 
     }
 
     .about-section h2 {
@@ -112,18 +112,18 @@
     .navbar {
       position: fixed;
       top: 0;
-      right: 0; /* Align the navbar to the right */
+      right: 0; 
       width: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       display: flex;
-      justify-content: flex-end; /* Align the buttons to the right */
+      justify-content: flex-end;
       align-items: center;
       z-index: 999;
     }
 
     .navbar .btn {
-      margin-left: 10px; /* Adjust the spacing between buttons */
+      margin-left: 10px;
     }
   </style>
   <script>
@@ -143,16 +143,16 @@
   <div class="container">
     <h1>ECO-FARM-CONNECT</h1>
     
-      <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br
-                  ><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br
-                  ><br>
-        <input type="submit" value="Login" class="btn">
-        
-      </form>
+     <form method="POST" action="/login">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br><br>
+  {% if login_failed %}
+    <p style="color: red;">Invalid username or password. Please try again.</p>
+  {% endif %}
+  <input type="submit" value="Login" class="btn">
+</form>
     
     <div class="spacer"></div>
     <div class="about-section">

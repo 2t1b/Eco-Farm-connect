@@ -49,33 +49,33 @@
     .form-container form .resizable-input {
       margin-bottom: 10px;
       padding: 5px;
-      width: 300px; /* Adjust the width as desired */
+      width: 300px;
       height: 30px;
       border: 1px solid #ccc;
       resize: vertical;
       overflow: auto;
       white-space: nowrap;
-      background-color: #f2f2f2; /* Light gray background color */
+      background-color: #f2f2f2; 
       border-radius: 5px;
-      color: #888; /* Light gray text color */
+      color: #888; 
       text-align: left;
     }
     .form-container form textarea {
       margin-bottom: 10px;
       padding: 5px;
-      width: 300px; /* Adjust the width as desired */
+      width: 300px; 
       height: 100px;
     }
     .form-container form input[type="text"] {
       margin-bottom: 10px;
       padding: 5px;
-      width: 300px; /* Adjust the width as desired */
+      width: 300px; 
     }
     .form-container form textarea[name="price"] {
       resize: vertical;
     }
     .form-container form button {
-      margin-top: 10px; /* Add margin to adjust spacing */
+      margin-top: 10px; 
       padding: 10px 20px;
       background-color: #fff;
       border: none;
@@ -117,147 +117,15 @@
     <div class="form-container">
       <div class="register-column">
         <h2> List What You Need And Get It From Farmers !! </h2>
-        <form action="submit_buyer_request.php" method="POST">
-          <div class="resizable-input" contenteditable="true" data-placeholder="Products">Products</div>
+        
+    <form action="submit_buyer_request.php" method="POST">
+          <textarea name="products" placeholder="products" style="width: 300px; height: 100px;"></textarea>
           <textarea name="requirements" placeholder="Requirements" style="width: 300px; height: 100px;"></textarea>
-          <input type="text" name="price" placeholder="Price" style="width: 300px;">
+              
+          <input type="text" name="price" placeholder="Price" style="width: 300px;height: 100px">
           <input type="text" name="contact" placeholder="Contact/Phone Number" style="width: 300px;">
-          <button type="submit">Submit</button>
+          <button type="submit">Post</button>
         </form>
       </div>
     </div>
   </div>
-</The corrected code is as follows:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ECO-FARM-CONNECT</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
-    h1 {
-      color: white;
-      font-size: 36px;
-      letter-spacing: 2px;
-      margin: 10px;
-      text-align: center;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-image: url('https://eco-farm-connect--sm2t1b.repl.co/static/background.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    .form-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      margin-top: 20px;
-    }
-    .form-container h2 {
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .form-container form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .form-container form .resizable-input {
-      margin-bottom: 10px;
-      padding: 5px;
-      width: 300px; /* Adjust the width as desired */
-      height: 30px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      overflow: auto;
-      white-space: nowrap;
-      background-color: #f2f2f2; /* Light gray background color */
-      border-radius: 5px;
-      color: #888; /* Light gray text color */
-      text-align: left;
-    }
-    .form-container form textarea {
-      margin-bottom: 10px;
-      padding: 5px;
-      width: 300px; /* Adjust the width as desired */
-      height: 100px;
-    }
-    .form-container form input[type="text"] {
-      margin-bottom: 10px;
-      padding: 5px;
-      width: 300px; /* Adjust the width as desired */
-    }
-    .form-container form textarea[name="price"] {
-      resize: vertical;
-    }
-    .form-container form button {
-      margin-top: 10px; /* Add margin to adjust spacing */
-      padding: 10px 20px;
-      background-color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .form-container form button:hover {
-      background-color: #ccc;
-    }
-    .register-column {
-      flex: 1;
-      padding: 10px;
-    }
-    .back-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 10px;
-      background-color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .back-button:hover {
-      background-color: #ccc;
-    }
-    @media (max-width: 600px) {
-      .form-container {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>ECO-FARM-CONNECT</h1>
-    <h2 style="margin-top: 20px;"></h2>
-    <a href=" https://eco-farm-connect--sm2t1b.repl.co/"><button class="back-button">Back</button></a>
-    <div class="form-container">
-      <div class="register-column">
-        <h2> List What You Need And Get It From Farmers !! </h2>
-        <form action="submit_buyer_request.php" method="POST">
-          <div class="resizable-input" contenteditable="true" data-placeholder="Products">Products</div>
-          <textarea name="requirements" placeholder="Requirements" style="width: 300px; height: 100px;"></textarea>
-          <input type="text" name="price" placeholder="Price" style="width: 300px;">
-          <input type="text" name="contact" placeholder="Contact/Phone Number" style="width: 300px;">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
