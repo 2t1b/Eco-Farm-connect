@@ -22,39 +22,6 @@ class Jobs(db.Model):
     phone_number = db.Column(db.String(20))
 
 
-
-List = [
-    {
-        'id': 1,
-        'product': 'Teff supplier needed',
-        'location': 'Addis Ababa, Ethiopia',
-        'price': '8000 Br per quintal'
-    },
-    {
-        'id': 2,
-        'product': 'Sorghum supplier needed',
-        'location': 'Shashemene, Ethiopia',
-        'price': '5000 Br per quintal'
-    },
-    {
-        'id': 3,
-        'product': 'Wheat and Maize supplier needed',
-        'location': 'Arbaminch, Ethiopia',
-        'price': '6000-7700 Br per quintal'
-    },
-    {
-        'id': 4,
-        'product': 'Chickpea supplier needed',
-        'location': 'Addis Ababa, Ethiopia',
-        'price': '5500 Br per quintal'
-    },
-    {
-        'id': 5,
-        'product': 'Soybean supplier needed',
-        'location': 'Adama, Ethiopia',
-        'price': '9000 Br per quintal'
-    }
-]
 def load_request_from_db():
     try:
         with engine.connect() as conn:
@@ -108,7 +75,10 @@ def check_login_credentials(username, password):
 
 @app.route("/")
 def hello_selam():
-    return render_template('home.html', list=List)
+    jobs = Jobs.query.all()
+    return render_template('ho.html', jobs=jobs)
+   
+   
 
 @app.route("/api/list")
 def request_list():
@@ -165,7 +135,7 @@ def buyer_post():
    
 @app.route('/back')
 def exit():
-    return render_template('home.html')
+    return render_template('ho.html')
 @app.route('/user')
 def dash_board():
     return render_template('user.html')
@@ -177,11 +147,11 @@ def login():
         password = request.form.get('password')
 
         if not check_login_credentials(username, password):
-            return render_template('home.html', login_failed=True)
+            return render_template('ho.html', login_failed=True)
 
         return redirect(url_for('dash_board'))
 
-    return render_template('home.html', login_failed=False)
+    return render_template('ho.html', login_failed=False)
   
 @app.route('/save.php', methods=['POST'])
 def save_form_data():
