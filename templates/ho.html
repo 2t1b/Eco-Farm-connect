@@ -35,13 +35,14 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+     display: inline-block;
+     padding: 10px 20px;
+     background-color: #4CAF50;
+     color: white;
+     text-decoration: none;
+     border-radius: 5px;
+     transition: background-color 0.3s ease;
+     
     }
 
     .btn:hover {
@@ -105,7 +106,7 @@
 
     .request-section {
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      padding: 30px;
       margin-bottom: 25px;
     }
 
@@ -125,6 +126,41 @@
     .navbar .btn {
       margin-left: 10px;
     }
+     .jobs-info {
+     display: flex;
+     flex-direction: column;
+    }
+
+     .jobs-row {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+      .jobs-column {
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+       }
+
+       .jobs-column span {
+       margin-bottom: 5px;
+      }
+
+       .jobs-column span:first-child {
+       font-weight: bold;
+       }
+
+       .jobs-column span:nth-child(2)::after {
+         content: ",";
+        margin-right: 5px;
+        }
+      
+        .jobs-row {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        }
+    
   </style>
   <script>
     function toggleLoginForm(){
@@ -177,18 +213,30 @@ By joining our platform, wholesalers unlock a world of attractive opportunities 
 Join us today and experience a seamless wholesale experience that supports sustainable farming practices while delivering the finest products straight from the farm to your business.
       </p>
     </div>
-
-    <div class="request-section">
-      <h2>Request board</h2>
-      <div>
-        {% for item in list %}
-         {%include 'requestlist.html'%}
-        {% endfor %}
-      </div>
-    </div>
-
-    <a href="#" class="btn">Contact Us</a>
+<div class="request-section">
+  <h2>Request board</h2>
+  <div class="jobs-info">
+    {% for jobs in jobs %}
+      {% if jobs.title or jobs.location or jobs.price or jobs.requirement or jobs.phone_number %}
+        <div class="jobs-row">
+          <div class="jobs-column">
+            <span>Title:</span>
+            <span>Location:</span>
+            <span>Price:</span>
+          </div>
+          <div class="jobs-column">
+            <span>{{ jobs.title }}</span>
+            <span>{{ jobs.location }}</span>
+            <span>{{ jobs.price }}</span>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
+</div>
+         <a href="#" class="btn">Contact Us</a>
+  </div>
+</div>
 
   {% include 'footer.html' %};
 </body>
