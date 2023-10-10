@@ -131,6 +131,17 @@
       var loginForm= document.getElementById("login-form");
       loginForm.classList.toggle("hidden");
     }
+
+    function showLoginFirstMessage() {
+      alert("Please login first.");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var contactButton = document.getElementById("contact-button");
+      contactButton.addEventListener("click", showLoginFirstMessage);
+    });
+
+    
   </script>
 </head>
 <body>

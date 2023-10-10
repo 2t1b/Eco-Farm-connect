@@ -6,51 +6,53 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import declarative_base
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['APP_CONFIG']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://eco_jvoi_user:LUnZEDi0fIPIBqsBLE0hTy3TDjXAO6BN@dpg-cki1ggi12bvs738vatdg-a.oregon-postgres.render.com/eco_jvoi'
 
 db = SQLAlchemy(app)
 
-engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+engine = create_engine('postgresql://eco_jvoi_user:LUnZEDi0fIPIBqsBLE0hTy3TDjXAO6BN@dpg-cki1ggi12bvs738vatdg-a.oregon-postgres.render.com/eco_jvoi')
 Base = declarative_base()
-
-class Jobs(db.Model):
+class Jobs(Base):
+    __tablename__ = 'jobs'
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(250))
-    location = db.Column(db.String(250))
-    price = db.Column(db.String(100))  # Specify the column type as Numeric
-    requirement = db.Column(db.String(2000))
+    title = db.Column(db.String(255))
+    location = db.Column(db.String(255))
+    price = db.Column(db.String(20))
+    requirement = db.Column(db.Text)
     phone_number = db.Column(db.String(20))
+
+
 
 
 
 List = [
     {
         'id': 1,
-        'product': 'Teff supplier needed',
+        'title': 'Teff supplier needed',
         'location': 'Addis Ababa, Ethiopia',
         'price': '8000 Br per quintal'
     },
     {
         'id': 2,
-        'product': 'Sorghum supplier needed',
+        'title': 'Sorghum supplier needed',
         'location': 'Shashemene, Ethiopia',
         'price': '5000 Br per quintal'
     },
     {
         'id': 3,
-        'product': 'Wheat and Maize supplier needed',
+        'title': 'Wheat and Maize supplier needed',
         'location': 'Arbaminch, Ethiopia',
         'price': '6000-7700 Br per quintal'
     },
     {
         'id': 4,
-        'product': 'Chickpea supplier needed',
+        'title': 'Chickpea supplier needed',
         'location': 'Addis Ababa, Ethiopia',
         'price': '5500 Br per quintal'
     },
     {
         'id': 5,
-        'product': 'Soybean supplier needed',
+        'title': 'Soybean supplier needed',
         'location': 'Adama, Ethiopia',
         'price': '9000 Br per quintal'
     }
@@ -160,8 +162,7 @@ def buy():
 
 @app.route('/buyer/post')
 def buyer_post():
-    jobs = Jobs.query.all()
-    return render_template('post.html', jobs=jobs)
+    return render_template('post.html')
    
 @app.route('/back')
 def exit():
